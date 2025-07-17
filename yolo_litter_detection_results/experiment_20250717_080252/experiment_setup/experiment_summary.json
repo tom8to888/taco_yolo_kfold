@@ -1,0 +1,36 @@
+{
+  "experiment_info": {
+    "start_time": "2025-07-17T08:02:49.570724",
+    "models_to_test": [
+      "YOLOv5n",
+      "YOLOv5s",
+      "YOLOv8n",
+      "YOLOv8s",
+      "YOLOv9t",
+      "YOLOv9s",
+      "YOLOv10t",
+      "YOLOv10s",
+      "YOLOv11n",
+      "YOLOv11s",
+      "YOLOv12n",
+      "YOLOv12s"
+    ],
+    "dataset": "TACO-1",
+    "methodology": "Bianco et al. (2024) replication",
+    "cross_validation": "5-fold",
+    "epochs": 100
+  },
+  "system_info": {
+    "cuda_available": false,
+    "gpu_name": "CPU",
+    "pytorch_version": "2.6.0+cu124",
+    "ultralytics_version": "8.3.161"
+  },
+  "expected_outputs": [
+    "model_weights",
+    "training_logs",
+    "validation_metrics",
+    "inference_benchmarks",
+    "final_comparison"
+  ]
+}
