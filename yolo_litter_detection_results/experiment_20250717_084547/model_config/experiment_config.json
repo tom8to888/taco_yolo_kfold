@@ -1,0 +1,78 @@
+{
+  "experiment_info": {
+    "name": "YOLO Litter Detection - Bianco et al. Replication",
+    "methodology": "K-fold Cross-Validation (70-10-20 split)",
+    "dataset": "TACO-1",
+    "start_time": "2025-07-17T08:45:47.496774",
+    "k_folds": 3,
+    "total_models": 2,
+    "confidence_thresholds": [
+      0.001,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      0.95
+    ]
+  },
+  "models": {
+    "yolov9t": {
+      "weights": "yolov9t.pt",
+      "family": "YOLOv9",
+      "variant": "tiny",
+      "imgsz": 640,
+      "expected_params": "2.0M",
+      "description": "YOLOv9 Tiny - Efficient design"
+    },
+    "yolo11n": {
+      "weights": "yolo11n.pt",
+      "family": "YOLOv11",
+      "variant": "nano",
+      "imgsz": 640,
+      "expected_params": "2.6M",
+      "description": "YOLOv11 Nano - Latest improvements"
+    }
+  },
+  "training_schedule": {
+    "estimated_total_time": 6.0,
+    "time_per_model_fold": 1.0,
+    "execution_order": [
+      "yolov9t",
+      "yolo11n"
+    ],
+    "priority_models": [
+      "yolov9t",
+      "yolo11n"
+    ],
+    "checkpoint_frequency": 2
+  },
+  "kfold_config": {
+    "k_folds": 3,
+    "current_fold": 1,
+    "dataset_base_path": "/kaggle/working/yolo_dataset_kfold",
+    "results_base_path": "/kaggle/working/kfold_results",
+    "save_intermediate": true,
+    "upload_after_each_fold": true,
+    "time_limit_hours": 11.5
+  },
+  "system_info": {
+    "cuda_available": false,
+    "gpu_name": null,
+    "gpu_memory": null,
+    "cpu_count": 4,
+    "ram_total": 33.662332928,
+    "pytorch_version": "2.6.0+cu124"
+  },
+  "expected_outputs": {
+    "trained_models": "2 models \u00d7 3 folds",
+    "metrics_files": "Per-fold validation metrics",
+    "final_comparison": "Averaged cross-validation results",
+    "confidence_optimization": "Optimized thresholds per model",
+    "inference_benchmarks": "Speed/accuracy analysis"
+  }
+}
